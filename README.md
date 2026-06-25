@@ -1,49 +1,101 @@
 # Learn Web Scraping
 
-> O projeto se trata,sobre web scraping na qual nesse projeto utiliza o seguinte site https://toscrape.com/ que é recomendado para quem quer aprender Web Scraping 
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-44B833?style=for-the-badge)](https://www.crummy.com/software/BeautifulSoup/)
 
+## Table of Contents
 
-## Sumário
+- [Context](#-context)
+- [Software features](#-software-features)
+- [Technologies and tools](#-technologies-and-tools)
+- [Architecture](#-architecture)
+- [Repository structure](#-repository-structure)
+- [Requirements](#-requirements)
+- [How to run](#-how-to-run)
+- [Author](#-author)
 
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Rodar](#como-rodar)
-  - [Pré-requisitos](#pré-requisitos)
-- [Como Usar](#como-usar)
-- [Como Contribuir](#como-contribuir)
+# 📌 Context 
 
+This project is a repository dedicated to learning and practicing web scraping in Python. The script extracts quotes and their respective authors from the sandbox site `https://quotes.toscrape.com/` using HTTP requests and HTML parsing.
 
-## Funcionalidades
+## 🚀 Software features
 
-- Extrair dados do site https://toscrape.com/
+- **Web Data Extraction:** Fetches static HTML content from websites using the `requests` library.
+- **HTML Parsing:** Parses and queries page structures using `BeautifulSoup` to locate class elements.
+- **Data Filtering:** Iterates through parsed quote blocks to cleanly extract and print only the text content and the author's name.
 
-## Tecnologias Utilizadas
+## 🛠️ Technologies and tools
 
-- Python
-    - Requests
-    - BeautifulSoup
+- Python 3
+- Requests (HTTP Library)
+- BeautifulSoup4 (HTML Parser)
 
-## Como Rodar
-### Pré-requisitos
+## 📋 Architecture
 
-Antes de executar o projeto, certifique-se de ter os seguintes requisitos instalados:
-- Python 3.10 ou superior
-- Editor de texto ou IDE de sua preferência (Visual Studio Code, PyCharm, etc.)
+```mermaid
+    graph TD
+        A[main.py Execution] --> B[requests.get URL]
+        B -->|Fetch HTML| C[quotes.toscrape.com]
+        C -->|Parse HTML| D[BeautifulSoup Parser]
+        D -->|Extract div class quote| E[Loop & print: Quote - Author]
+```
 
-## Como rodar
+## 📂 Repository structure
 
-- Clone ou baixe o repositório
-- Baixe seus dados da Uber
-- Coloque dentro da pasta do projeto
-- Execute o comando python -m venv .venv para criar um ambiente virtual
-- Ative o ambiente virtual:
-- No Windows: .venv\Scripts\activate
-- No Linux/Mac: source .venv/bin/activate
-- Execute o comando pip install -r requirements.txt para instalar as dependências
-- Entre no arquivo main.py
-- Clique em executar
+```text
+- 📂 lab-web-scraping/
+  - 📄 main.py (Main Python script containing scraping logic)
+  - 📄 requirements.txt (Python dependencies file)
+```
 
+## 📦 Requirements
 
-## Como Contribuir
+- Python 3.10+
+- Active internet connection (to connect to `quotes.toscrape.com`)
 
-- Entre em contato comigo pelo [LinkedIn](https://www.linkedin.com/in/matheus-rodrigues-mrj/)
+## ⚙️ How to run
+
+### 1. Clone the Repository
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/MatheusRodri/lab-web-scraping.git
+cd lab-web-scraping
+```
+
+### 2. Set Up a Virtual Environment (Optional but Recommended)
+Create and activate a virtual environment:
+
+**On Windows (PowerShell):**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+```cmd
+python -m venv venv
+.\venv\Scripts\activate.bat
+```
+
+**On Linux/macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+Install the required packages from `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Script
+Execute the scraping script:
+```bash
+python main.py
+```
+
+## 👤 Author
+
+Matheus Rodrigues 
+[LinkedIn](https://linkedin.com/in/matheus-rodrigues-mrj) [GitHub](https://github.com/MatheusRodri)
